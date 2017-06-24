@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path'); //Node's built-in path module
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -10,14 +10,15 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
   entry: './src/entry.js',
+
   output: {
     path: path.resolve('dist'),
     filename: 'bundled.js'
   },
   module: {
-    loaders: [
+    rules: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
+      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
     ]
   },
   plugins: [HtmlWebpackPluginConfig]
