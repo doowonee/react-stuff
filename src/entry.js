@@ -1,20 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'react-toolbox/lib/button';
 
-// import App from './components/App.jsx';
-
-// ReactDOM.render(<App />, document.getElementById('root'));
-
-const TestButtons = () => (
-  <div>
-    <Button label='Bookmark' />
-    <Button label='asdasd' />
-    <Button label="Hello World!" />
-  </div>
-
-  );
+import FAB from './components/FloatingMenu.jsx'
 
 ReactDOM.render(
-  TestButtons(),  document.getElementById('root')
+  <FAB />,  document.getElementById('root')
   );
