@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import FAB from './components/FloatingMenu.jsx'
+import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
+import {Button} from 'react-toolbox/lib/button';
+
+import ViewCards from './components/ViewCards.jsx'
 
 ReactDOM.render(
-  <FAB />,  document.getElementById('root')
+  <ViewCards />,  document.getElementById('root')
   );
