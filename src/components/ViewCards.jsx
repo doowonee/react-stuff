@@ -7,7 +7,7 @@ const dummyText = 'Lorem Ipsum is simply dummy text of the printing and typesett
 
 const ViewCards = (props) => {
   return (
-    <Card style={{width: '350px'}}>
+    <Card style={props.style}>
     <CardTitle
       avatar="https://placeimg.com/80/80/animals"
       title="Avatar style title"
