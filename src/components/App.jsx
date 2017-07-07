@@ -9,8 +9,6 @@ const cardStyle  = {
     width: '400px'
 };
 
-//https://stackoverflow.com/questions/26882177/react-js-inline-style-best-practices
-//http://jamesknelson.com/why-you-shouldnt-style-with-javascript/
 
 export default class App extends React.Component {
   render() {

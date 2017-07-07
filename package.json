@@ -6,7 +6,7 @@
   "author": "the1900",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --port 8080 --hot --public --host 192.168.219.141",
     "build": "webpack"
   },
   "dependencies": {
