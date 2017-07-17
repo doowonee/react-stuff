@@ -1,0 +1,11 @@
+:root {
+    /* ovverride 해야되는거 정리 */
+    --font-app: 'Spoqa Han sans', 'Arial', sans-serif;
+    --font-mono: 'D2Coding', 'Consolas', 'Courier', 'monospace';
+}
+
+/*
+    yarn add postcss-modules-values
+    yarn add modules-values-extract 
+*/
+

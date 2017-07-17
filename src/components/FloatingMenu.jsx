@@ -13,7 +13,10 @@ import { Button } from 'react-toolbox/lib/button';
 export default function FloatingMenu(props) {
   return (
     <div>
-      <Button label='add' floating />
+      <Button icon='arrow_upward' floating accent  />
+      <Button icon='add' floating accent  />
+      <Button icon='add' floating accent  />
+      <Button label='Facebook' floating />
       <Button icon='add' floating accent  />
     </div>
   )
