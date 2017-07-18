@@ -12,12 +12,3 @@
     yarn add postcss-modules-values
     yarn add modules-values-extract 
 */
-
-.test2 {
-    background-color: var(--palette-deep-orange-a100);
-    
-    & button {
-        box-shadow: var(--zdepth-shadow-3);
-    }
-}
-

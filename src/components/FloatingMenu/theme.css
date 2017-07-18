@@ -1,0 +1,20 @@
+@import 'react-toolbox/lib/colors.css';
+@import 'react-toolbox/lib/variables.css';
+@import 'react-toolbox/lib/media.css';
+
+@import '../../global.css';
+
+.list {
+    /* background-color: var(--palette-deep-orange-a100); */
+    
+    & button {
+        box-shadow: var(--zdepth-shadow-3);
+    }
+}
+
+.vertical {
+     & button {
+        height: 48px;
+        width: 48px;
+    }
+}

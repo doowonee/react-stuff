@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ViewCards from './ViewCards.jsx'
-import FloatingMenu from './FloatingMenu.jsx'
+import FloatingMenu from './FloatingMenu'
 
 const cardStyle  = {
     marginLeft: '48px',
