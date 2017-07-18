@@ -5,16 +5,22 @@
 @import '../../global.css';
 
 .list {
-    /* background-color: var(--palette-deep-orange-a100); */
-    
+    position: fixed;
+    right: 64px;
+    width: initial;
+    bottom: 64px;
+
     & button {
         box-shadow: var(--zdepth-shadow-3);
+        margin: 0 10px;
+        &:hover {
+            box-shadow: var(--zdepth-shadow-4);
+        }
     }
 }
 
 .vertical {
-     & button {
-        height: 48px;
-        width: 48px;
+     & [data-react-toolbox='button'] {
+         margin: 10px;
     }
 }
