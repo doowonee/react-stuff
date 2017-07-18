@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Button } from 'react-toolbox/lib/button';
 
+// 특이하게도 {} javascript expression을 쓰면 해당 css문에 클래스 속성을 못읽는 문제 박생 property가 없다고함 근데 위에 react는 또 없어도되고 있어도됨
+import styles from '../global.css'
+
 /*export default class FloatingMenu extends React.Component {
   render() {
     return (
@@ -12,9 +15,9 @@ import { Button } from 'react-toolbox/lib/button';
 
 export default function FloatingMenu(props) {
   return (
-    <div>
+    <div className={styles.test2}>
+      <Button icon='more_vert' floating accent  />
       <Button icon='arrow_upward' floating accent  />
-      <Button icon='add' floating accent  />
       <Button icon='add' floating accent  />
       <Button label='Facebook' floating />
       <Button icon='add' floating accent  />
