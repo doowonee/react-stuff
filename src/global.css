@@ -8,6 +8,10 @@
     --font-mono: 'D2Coding', 'Consolas', 'Courier', 'monospace';
 }
 
+body {
+    margin: 0;
+}
+
 /*
     yarn add postcss-modules-values
     yarn add modules-values-extract 

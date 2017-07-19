@@ -23,4 +23,23 @@
      & [data-react-toolbox='button'] {
          margin: 10px;
     }
+    & [data-react-toolbox="font-icon"] {
+        font-size: 32px;
+        color: white;
+    }
+}
+
+.button {
+    & > svg {
+        color: white;
+    }
+}
+
+.getlink {
+    background-color: #FFA500 !important;
+
+    & span {
+        font-size: 32px !important;
+        color: white !important;
+    }
 }

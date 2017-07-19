@@ -5,7 +5,7 @@ import { Layout, NavDrawer, Panel, Sidebar } from 'react-toolbox/lib/layout';
 import Navigation from 'react-toolbox/lib/navigation';
 import { Button } from 'react-toolbox/lib/button';
 
-import {GithubIcon, RssIcon} from '../Icons'
+import { BrandColor, RssIcon, TwitterIcon, FacebookIcon, LinkedinIcon } from '../Icons'
 
 // 특이하게도 {} javascript expression을 쓰면 해당 css문에 클래스 속성을 못읽는 문제 박생 property가 없다고함 근데 위에 react는 또 없어도되고 있어도됨
 import theme from './theme.css'
@@ -18,21 +18,30 @@ import theme from './theme.css'
   }
 }*/
 
+function scrollUP() {
+  console.log("scroll");
+}
+
 export default function FloatingMenu(props) {
+
+  var state = { clinked: false };
+
   return (
     <List theme={theme}>
-      <Navigation type='vertical' theme={theme} mini>
-        <Button floating mini >         
-          {<GithubIcon />}
+      <Navigation type='vertical' theme={theme}>
+        <Button icon='link' floating mini theme={theme} className={theme.getlink} />         
+        <Button floating mini theme={theme} style={{backgroundColor: BrandColor.linkedin}}>         
+          { <LinkedinIcon /> }
         </Button>
-        <Button floating mini >
-          {<RssIcon />}
-        </Button>
-        <Button label='linkedin' floating mini />
-        <Button label='twitter' floating mini/>
+        <Button floating mini theme={theme} style={{backgroundColor: BrandColor.facebook}}>         
+          { <FacebookIcon /> }
+        </Button>        
+        <Button floating mini theme={theme} style={{backgroundColor: BrandColor.twitter}}>         
+          { <TwitterIcon /> }
+        </Button>        
       </Navigation>
-      <Button icon='more_vert' floating accent />
-      <Button icon='arrow_upward' floating accent  />
+      <Button icon='more_vert' floating accent onClick={scrollUP()}/>
+      <Button icon='arrow_upward' floating accent  onClick={scrollUP()}/>
     </List>
   )
 }

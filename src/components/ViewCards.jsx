@@ -17,12 +17,12 @@ const ViewCards = (props) => (
       aspectRatio="wide"
       image="https://placeimg.com/800/450/nature"
     />
-    <CardTitle className={styles.test2}
+    <CardTitle
       title="Title goes here"
       subtitle="Subtitle here"
     />
-    <CardText className={styles.test2}>{dummyText}</CardText>
-    <CardActions className={styles.test2}>
+    <CardText>{dummyText}</CardText>
+    <CardActions>
       <Button icon='bookmark' label='Bookmark' accent />
       <Button label="Action 2" />
     </CardActions>
