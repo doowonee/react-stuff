@@ -19,7 +19,9 @@ import theme from './theme.css'
 }*/
 
 function scrollUP() {
-  console.log("scroll");
+  setInterval(function() {
+    window.scroll(0, 0);
+  }, 2);
 }
 
 export default function FloatingMenu(props) {
