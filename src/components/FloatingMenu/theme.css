@@ -6,13 +6,12 @@
 
 .list {
     position: fixed;
-    right: 64px;
+    right: 56px;
     width: initial;
     bottom: 64px;
 
     & button {
         box-shadow: var(--zdepth-shadow-3);
-        margin: 0 10px;
         &:hover {
             box-shadow: var(--zdepth-shadow-4);
         }
@@ -21,7 +20,7 @@
 
 .vertical {
      & [data-react-toolbox='button'] {
-         margin: 10px;
+         margin: 10px 0;;
     }
     & [data-react-toolbox="font-icon"] {
         font-size: 32px;
