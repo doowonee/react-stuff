@@ -9,7 +9,6 @@ const cardStyle  = {
     maxWidth: '480px'
 };
 
-
 export default class App extends React.Component {
   render() {
     return (
@@ -25,7 +24,7 @@ export default class App extends React.Component {
             <ViewCards style={cardStyle} />
           </div>
         </Panel>
-          {/* <FloatingMenu /> */}
+           <FloatingMenu /> 
       </Layout> );
   }
 }

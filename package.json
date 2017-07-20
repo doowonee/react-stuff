@@ -20,6 +20,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-toolbox": "^2.0.0-beta.12",
+    "smoothscroll-polyfill": "^0.3.5",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
