@@ -19,7 +19,8 @@ module.exports = {
   module: {
     rules: [
       { test: /\.jsx?/, loader: 'babel-loader', exclude: /node_modules/ }, // Rule.loader is a shortcut to Rule.use: [ { loader } ]
-      { test: /\.exec\.js$/,  use: [ 'script-loader' ]  }, //https://webpack.js.org/guides/shimming/ for scoll smooth
+      //{ test: /\.exec\.js$/,  use: [ 'script-loader' ]  }, 
+      //https://webpack.js.org/guides/shimming/ for scoll smooth
       // https://webpack.js.org/configuration/module/
       {
         test: /\.css$/,
