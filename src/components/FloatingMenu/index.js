@@ -6,8 +6,9 @@ import Navigation from 'react-toolbox/lib/navigation';
 import { Button } from 'react-toolbox/lib/button';
 
 import { BrandColor, RssIcon, TwitterIcon, FacebookIcon, LinkedinIcon } from '../Icons';
+//import { polyfill } from 'smoothscroll-polyfill';
+import exec from '../../global.exec.js';
 
-import { polyfill } from 'smoothscroll-polyfill';
 // 특이하게도 {} javascript expression을 쓰면 해당 css문에 클래스 속성을 못읽는 문제 박생 property가 없다고함 근데 위에 react는 또 없어도되고 있어도됨
 import theme from './theme.css'
 
@@ -22,7 +23,7 @@ import theme from './theme.css'
 
 
 function scrollUp() {
-  polyfill();
+  //polyfill();
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 }
 
