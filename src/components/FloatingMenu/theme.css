@@ -20,7 +20,12 @@
 
 .vertical {
      & [data-react-toolbox='button'] {
-         margin: 10px 0;;
+        margin: 10px 0;;
+        transform: translateY(70px);
+
+        & .active {
+            transform: none;
+        }
     }
     & [data-react-toolbox="font-icon"] {
         font-size: 32px;
