@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { CSSTransitionGroup } from 'react-transition-group'
+
 import { List, ListItem, ListSubHeader, ListDivider, ListCheckbox } from 'react-toolbox/lib/list';
 import { Layout, NavDrawer, Panel, Sidebar } from 'react-toolbox/lib/layout';
 import Navigation from 'react-toolbox/lib/navigation';
@@ -94,9 +96,8 @@ class FloatingMenu extends React.Component {
 
   render() {
     return (
-      <List theme={theme}>
-        <Overlay active={this.state.active ? true : false} theme={theme} onClick={this.hide}  />
-        <Navigation type='vertical' theme={theme}>
+        <Navigation type='vertical' theme={theme} className={this.state.active ? theme.fm__active :""}>
+          <Overlay active={this.state.active ? true : false} theme={theme} onClick={this.hide}  />
           <Button icon='link' floating mini theme={theme} className={theme.getlink} />         
           <Button floating mini theme={theme} style={{backgroundColor: BrandColor.linkedin}}>         
             { <LinkedinIcon /> }
@@ -107,14 +108,14 @@ class FloatingMenu extends React.Component {
           <Button floating mini theme={theme} style={{backgroundColor: BrandColor.twitter}}>         
             { <TwitterIcon /> }
           </Button>        
-        </Navigation>
-         <Button icon={this.state.active ? 'arrow_upward' : 'more_vert'} floating accent onClick={this.handleClick}/> 
+          <Button icon={ this.state.active ? 'arrow_upward' : 'share'} floating accent onClick={this.handleClick}/> 
         {/* <Button icon='arrow_upward' floating accent onClick={this.scrollUp}/> 
             에니메이션도 추가 4개버튼 원래 겹쳐있도록 해야함 안보이게 해야함 아니면 안보이게 하든지
             onclick 3개 함수 매핑해야됨 state 바꾸는거랑 스크롤 업하는거랑 다른곳 클릭시 다시 바꾸고 버튼 안보이게 하는거랑
             이 FM눌렀을때 주위 어둡게 하는거 방법있지 않을까 Drawer가 어캐 되있ㄴ느지를 봐야댐 
         */}
-      </List>
+        </Navigation>
+        
     );
   }
 

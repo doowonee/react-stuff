@@ -4,38 +4,42 @@
 
 @import '../../global.css';
 
-.list {
+.vertical {
     position: fixed;
-    right: 56px;
-    width: initial;
+    right: 32px;
+    //width: initial;
     bottom: 64px;
 
     & button {
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0); //모마일 터치 효과 없애기
         box-shadow: var(--zdepth-shadow-3);
         &:hover {
             box-shadow: var(--zdepth-shadow-4);
         }
-    }
-}
-
-.vertical {
-     & [data-react-toolbox='button'] {
-        margin: 10px 0;;
-        transform: translateY(70px);
-
-        & .active {
-            transform: none;
+        & > svg {
+            color: white;
+        }
+        &:nth-child(2) { transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; }
+        &:nth-child(3) { transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; }
+        &:nth-child(4) { transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
+        &:nth-child(5) { transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; }
+        &:not(:last-child) {
+            cursor: default;
+            transform: translateY(100px);
+            margin: 13px;
+            opacity: 0;
         }
     }
-    & [data-react-toolbox="font-icon"] {
-        font-size: 32px;
-        color: white;
-    }
 }
 
-.button {
-    & > svg {
-        color: white;
+.fm__active {
+    & button {
+        &:not(:last-child) {
+            cursor: pointer;
+            transform: none;
+            opacity: 1;
+        }
     }
 }
 
