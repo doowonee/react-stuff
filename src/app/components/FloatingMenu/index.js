@@ -98,7 +98,7 @@ class FloatingMenu extends React.Component {
   render() {
     return (
       <div style={this.props.style}>
-        <Navigation type='vertical'  theme={theme} className={this.state.active ? theme.fm__active :""} >
+        <Navigation type='vertical' theme={theme} className={this.state.active ? theme.fm__active :""} >
           <Button icon='link' floating mini theme={theme} className={theme.getlink} />         
           <Button floating mini theme={theme} style={{backgroundColor: BrandColor.linkedin}}>         
             { <LinkedinIcon /> }

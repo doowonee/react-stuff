@@ -3,20 +3,17 @@
 @import 'react-toolbox/lib/media.css';
 
 :root {
-    /* ovverride 해야되는거 정리 */
+    /* variables */
     --font-app: 'Spoqa Han sans', 'Arial', sans-serif;
     --font-mono: 'D2Coding', 'Consolas', 'Courier', 'monospace';
 }
 
+/* overwritting default style */ 
 body {
     margin: 0;
+    /* delete bluebox on mobile chrome on */
     & button, & a {
         user-select: none;
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     }
 }
-
-/*
-    yarn add postcss-modules-values
-    yarn add modules-values-extract 
-*/

@@ -8,38 +8,41 @@ import { Overlay } from 'react-toolbox/lib/overlay';
 
 import ViewCards from './ViewCards.jsx'
 import FloatingMenu from './FloatingMenu'
-import Header from './Header'
+import AppHeader from './AppHeader'
 
 const cardStyle  = {
     maxWidth: '480px'
 };
 
 export default class App extends React.Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
-    this.hide = this.hide.bind(this);
+    this.toggleOverlay = this.toggleOverlay.bind(this);
     this.state = {
         drawerActive: false,
-        fmActive: false
+        overlayActive: false
     };
   }
-     hide = () => {
-      this.setState({fmActive: !this.state.fmActive});
-    }
+
+  toggleNavDrawer = () => {
+        this.setState({ drawerActive: !this.state.drawerActive });
+  };
+
+  toggleOverlay = () => {
+    this.setState({overlayActive: !this.state.overlayActive});
+  }
 
   render() {
     return (
-     <Layout>
-     <Overlay active={this.state.fmActive ? true : false} style={{ zIndex: 500}} onClick={this.hide}  />
-    <NavDrawer active={this.state.drawerActive}
-                    permanentAt='sm'
-                    onOverlayClick={ this.toggleDrawerActive }>
-                    <p>
-                        Navigation, account switcher, etc. go here.
-                    </p>
-      </NavDrawer>
+      <Layout>
+        <Overlay active={this.state.overlayActive} style={{ zIndex: 500 }} onClick = { this.toggleOverlay } />
+        <NavDrawer active={this.state.drawerActive}  permanentAt='sm' onOverlayClick={ this.toggleNavDrawer }>          
+          <p>
+            Navigation, account switcher, etc. go here.
+          </p>
+        </NavDrawer>
         <Panel>
-          <Header />
+          <AppHeader onClick={ this.toggleNavDrawer } />
           <div style={{flex: 1, overflowY: 'auto', padding: '16px'}}>
             <h1 style={{textAlign: 'center'}} onClick={ this.hide }>react 가동완료</h1>
             <ViewCards style={cardStyle} />
@@ -49,7 +52,7 @@ export default class App extends React.Component {
             <ViewCards style={cardStyle} />
           </div>
         </Panel>
-           <FloatingMenu style={{ zIndex: 501}} onClick={ this.hide } /> 
+        <FloatingMenu style={ this.state.drawerActive? {zIndex: 50} : {zIndex: 501} } onClick={ this.toggleOverlay } /> 
       </Layout> );
   }
 }

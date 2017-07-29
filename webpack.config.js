@@ -2,7 +2,7 @@ const path = require('path'); //Node's built-in path module
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './src/index.html',
+  template: './src/www/index.html',
   filename: 'index.html',
   inject: 'body'
 });
@@ -10,7 +10,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 // webpack 2.x | babel-loader >= 7.x (recommended) (^6.2.10 will also work, but with deprecation warnings)
 
 module.exports = {
-  entry: './src/entry.js',
+  entry: './src/app/index.js',
 
   output: {
     path: path.resolve('dist'),

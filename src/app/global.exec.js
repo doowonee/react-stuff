@@ -1,3 +1,3 @@
 require('smoothscroll-polyfill').polyfill();
 
-console.log("뭐냐");
+console.log("script-lodaer test");
