@@ -63,6 +63,7 @@ class FloatingMenu extends React.Component {
   
   //멤버 접근하면서 완전한 클래스 메소드의 역할을 하기 때문에 생성자에서의 bind 작업이 필요하다.
   handleClick() {
+    this.props.onClick(); //와 이렇게 parent method 호출 가능 와 ㅎㄷㄷ하네 
     if(this.state.active) {
       this.scrollUp();
       this.hide();
@@ -96,8 +97,8 @@ class FloatingMenu extends React.Component {
 
   render() {
     return (
-        <Navigation type='vertical' theme={theme} className={this.state.active ? theme.fm__active :""}>
-          <Overlay active={this.state.active ? true : false} theme={theme} onClick={this.hide}  />
+      <div style={this.props.style}>
+        <Navigation type='vertical'  theme={theme} className={this.state.active ? theme.fm__active :""} >
           <Button icon='link' floating mini theme={theme} className={theme.getlink} />         
           <Button floating mini theme={theme} style={{backgroundColor: BrandColor.linkedin}}>         
             { <LinkedinIcon /> }
@@ -109,13 +110,8 @@ class FloatingMenu extends React.Component {
             { <TwitterIcon /> }
           </Button>        
           <Button icon={ this.state.active ? 'arrow_upward' : 'share'} floating accent onClick={this.handleClick}/> 
-        {/* <Button icon='arrow_upward' floating accent onClick={this.scrollUp}/> 
-            에니메이션도 추가 4개버튼 원래 겹쳐있도록 해야함 안보이게 해야함 아니면 안보이게 하든지
-            onclick 3개 함수 매핑해야됨 state 바꾸는거랑 스크롤 업하는거랑 다른곳 클릭시 다시 바꾸고 버튼 안보이게 하는거랑
-            이 FM눌렀을때 주위 어둡게 하는거 방법있지 않을까 Drawer가 어캐 되있ㄴ느지를 봐야댐 
-        */}
         </Navigation>
-        
+      </div>
     );
   }
 
