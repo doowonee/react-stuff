@@ -7,3 +7,42 @@
 a {
     text-decoration: none;
 }
+
+.appBar {
+    background-color: inherit;
+    color: var(--color-black);
+}
+
+.leftIcon {
+    color: var(--color-black) !important;
+    @nest .appBar__active & {
+        color: var(--color-white) !important;
+    }
+}
+
+.title {
+    visibility: hidden;
+    @nest .appBar__active & {
+        visibility: visible;
+        color: var(--color-white) !important;
+    }
+}
+
+@media screen and (--larger-than-sm-viewport) {
+  .leftIcon {
+    display: none;
+  }
+}
+
+.appBar__active {
+    background-color: var(--color-accent);
+    color: var(--color-white) !important;
+}
+
+.horizontal {
+     & > [data-react-toolbox='link'] {
+        @nest .appBar__active & {
+            color: var(--color-white);
+        }
+    }
+}
