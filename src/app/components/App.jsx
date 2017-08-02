@@ -18,11 +18,14 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.toggleOverlay = this.toggleOverlay.bind(this);
+    this.toggleNavDrawer = this.toggleNavDrawer.bind(this);
     this.state = {
         drawerActive: false,
         overlayActive: false
     };
   }
+
+  
 
   toggleNavDrawer = () => {
         this.setState({ drawerActive: !this.state.drawerActive });
@@ -43,7 +46,7 @@ export default class App extends React.Component {
         </NavDrawer>
         <Panel>
           <AppHeader onClick={ this.toggleNavDrawer } />
-          <div style={{flex: 1, overflowY: 'auto', padding: '16px'}}>
+          <div style={{flex: 1, overflowY: 'auto', padding: '16px'}} >
             <h1 style={{textAlign: 'center'}} onClick={ this.hide }>react 가동완료</h1>
             <ViewCards style={cardStyle} />
             <ViewCards style={cardStyle} />
