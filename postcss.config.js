@@ -4,7 +4,8 @@ const overriddenVariables = {
   'color-primary': 'var(--palette-blue-500)',
   'color-accent': 'var(--palette-teal-600)',
   'preferred-font' : "'Spoqa Han sans', 'Arial', sans-serif;",
-  'drawer-desktop-width': "calc(5 * var(--standard-increment-desktop));"
+  // width of mobile same with desktop
+  'drawer-desktop-width': "280px;"
 };
 
 module.exports = {

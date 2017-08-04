@@ -1,4 +1,4 @@
-const path = require('path'); //Node's built-in path module
+const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -6,8 +6,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body'
 });
-
-// webpack 2.x | babel-loader >= 7.x (recommended) (^6.2.10 will also work, but with deprecation warnings)
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: './src/app/index.js',
@@ -18,27 +17,27 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.jsx?/, loader: 'babel-loader', exclude: /node_modules/ }, // Rule.loader is a shortcut to Rule.use: [ { loader } ]
-      //{ test: /\.exec\.js$/,  use: [ 'script-loader' ]  }, 
-      //https://webpack.js.org/guides/shimming/ for scoll smooth
-      // https://webpack.js.org/configuration/module/
+      { test: /\.jsx?/, loader: 'babel-loader', exclude: /node_modules/ },
       {
         test: /\.css$/,
-        use: [
-          "style-loader",
+        use: ExtractTextPlugin.extract({
+          fallbackLoader: "style-loader",
+          loader:[
           {
             loader: "css-loader",
             options: {
               modules: true, // default is false so that's the reason why failed before
-              // sourceMap: true,
               importLoaders: 1,
               localIdentName: "[name]--[local]--[hash:base64:8]"
             }
           },
-          "postcss-loader" // has separate config, see postcss.config.js nearby
-        ]
+          "postcss-loader"]
+        })
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    new ExtractTextPlugin({filename: 'styles.css', allChunks: true, disable: false}),
+    HtmlWebpackPluginConfig
+  ]
 }

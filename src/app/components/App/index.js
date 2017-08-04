@@ -6,9 +6,12 @@ import { Layout, NavDrawer, Panel, Sidebar } from 'react-toolbox/lib/layout';
 import { Overlay } from 'react-toolbox/lib/overlay';
 
 
-import ViewCards from './ViewCards.jsx'
-import FloatingMenu from './FloatingMenu'
-import AppHeader from './AppHeader'
+import ViewCards from '../ViewCards.jsx'
+import FloatingMenu from '../FloatingMenu'
+import AppHeader from '../AppHeader'
+import SocialMedia from '../SocialMedia'
+
+import './theme.css'
 
 const cardStyle  = {
     maxWidth: '480px'
@@ -25,8 +28,6 @@ export default class App extends React.Component {
     };
   }
 
-  
-
   toggleNavDrawer = () => {
         this.setState({ drawerActive: !this.state.drawerActive });
   };
@@ -39,10 +40,11 @@ export default class App extends React.Component {
     return (
       <Layout>
         <Overlay active={this.state.overlayActive} style={{ zIndex: 500 }} onClick = { this.toggleOverlay } />
-        <NavDrawer active={this.state.drawerActive}  permanentAt='sm' onOverlayClick={ this.toggleNavDrawer }>          
-          <p>
-            Navigation, account switcher, etc. go here.
-          </p>
+        <NavDrawer active={this.state.drawerActive} permanentAt='sm' onOverlayClick={ this.toggleNavDrawer }>          
+          <div style={{ paddingTop: '64px' }}>
+              <p>Navigation, account switcher, etc. go here.</p>
+          </div>
+          <SocialMedia />
         </NavDrawer>
         <Panel>
           <AppHeader onClick={ this.toggleNavDrawer } />
@@ -54,6 +56,7 @@ export default class App extends React.Component {
             <ViewCards style={cardStyle} />
             <ViewCards style={cardStyle} />
           </div>
+          
         </Panel>
         <FloatingMenu style={ this.state.drawerActive? {zIndex: 50} : {zIndex: 501} } onClick={ this.toggleOverlay } /> 
       </Layout> );

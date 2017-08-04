@@ -1,0 +1,13 @@
+@import 'react-toolbox/lib/colors.css';
+@import 'react-toolbox/lib/variables.css';
+@import 'react-toolbox/lib/media.css';
+
+/* overwritting default style */ 
+body {
+    margin: 0;
+    /* delete bluebox on mobile chrome on */
+    & button, & a {
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    }
+}

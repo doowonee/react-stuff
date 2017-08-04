@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "2.1.2",
     "html-webpack-plugin": "^2.28.0",
     "path": "^0.12.7",
     "postcss": "^6.0.3",

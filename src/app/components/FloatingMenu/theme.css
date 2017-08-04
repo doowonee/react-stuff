@@ -7,8 +7,7 @@
 .vertical {
     position: fixed;
     right: 32px;
-    //width: initial;
-    bottom: 64px;
+    bottom: 48px;
 
     & button {
         &:hover {
@@ -26,7 +25,7 @@
         }
         &:not(:last-child) {
             cursor: default;
-            transform: translateY(100px);
+            transform: translateY(100px); 
             margin: 13px;
             opacity: 0;
         }
