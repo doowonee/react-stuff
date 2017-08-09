@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { CSSTransitionGroup } from 'react-transition-group'
 
 import { List, ListItem, ListSubHeader, ListDivider, ListCheckbox } from 'react-toolbox/lib/list';
 import { Layout, NavDrawer, Panel, Sidebar } from 'react-toolbox/lib/layout';
@@ -12,19 +11,8 @@ import { Overlay } from 'react-toolbox/lib/overlay';
 import { BrandColor, RssIcon, TwitterIcon, FacebookIcon, LinkedinIcon } from '../Icons';
 //import { polyfill } from 'smoothscroll-polyfill';
 
-// 특이하게도 {} javascript expression을 쓰면 해당 css문에 클래스 속성을 못읽는 문제 박생 property가 없다고함 근데 위에 react는 또 없어도되고 있어도됨
+// 특이하게도 {} javascript expression을 쓰면 해당 css문에 클래스 속성을 못읽는 문제 발생 property가 없다고함 근데 위에 react는 또 없어도되고 있어도됨
 import theme from './theme.css'
-
-/*export default class FloatingMenu extends React.Component {
-  render() {
-    return (
-      <Button label='add' neutral floating />
-     )
-  }
-}*/
-
-
-
 
 class FloatingMenu extends React.Component {
   constructor(props) {
@@ -39,7 +27,7 @@ class FloatingMenu extends React.Component {
   }
 
   componentDidMount() {
-    require('smoothscroll-polyfill').polyfill();
+    require('smoothscroll-polyfill').polyfill();  //it's global not a module(IIFE)
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -51,16 +39,6 @@ class FloatingMenu extends React.Component {
     }
   }
 
-  /* componentDidUpdate(prevProps, prevState) {
-    if (prevState.active && !this.state.active) {
-      //if (this.props.onHide) this.props.onHide();
-      events.removeEventsFromDocument({
-        click: this.handleDocumentClick,
-        touchstart: this.handleDocumentClick,
-      });
-    }
-  } */
-  
   //멤버 접근하면서 완전한 클래스 메소드의 역할을 하기 때문에 생성자에서의 bind 작업이 필요하다.
   handleClick() {
     this.props.onClick(); //와 이렇게 parent method 호출 가능 와 ㅎㄷㄷ하네 
@@ -117,5 +95,4 @@ class FloatingMenu extends React.Component {
 
 }
 
-// 이렇게 따로 노출해도 되고 애초에 함수 만뜰때 노출해도 되고 ㅇㅇ
 export default FloatingMenu

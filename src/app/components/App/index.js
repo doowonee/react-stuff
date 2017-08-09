@@ -10,6 +10,7 @@ import ViewCards from '../ViewCards.jsx'
 import FloatingMenu from '../FloatingMenu'
 import AppHeader from '../AppHeader'
 import SocialMedia from '../SocialMedia'
+import SideNav from '../SideNav'
 
 import './theme.css'
 
@@ -41,9 +42,7 @@ export default class App extends React.Component {
       <Layout>
         <Overlay active={this.state.overlayActive} style={{ zIndex: 500 }} onClick = { this.toggleOverlay } />
         <NavDrawer active={this.state.drawerActive} permanentAt='sm' onOverlayClick={ this.toggleNavDrawer }>          
-          <div style={{ paddingTop: '64px' }}>
-              <p>Navigation, account switcher, etc. go here.</p>
-          </div>
+          <SideNav />
           <SocialMedia />
         </NavDrawer>
         <Panel>
